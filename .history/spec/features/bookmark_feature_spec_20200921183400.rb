@@ -10,6 +10,7 @@ end
 
 feature 'Viewing Bookmarks page' do
     scenario 'Bookmarks page should have a bookmark' do
+        setup_test_database
         visit('/bookmarks')
         expect(page).to have_content "http://www.askjeeves.com"
         expect(page).to have_content "http://www.makersacademy.com"

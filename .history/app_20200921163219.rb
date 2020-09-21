@@ -8,7 +8,6 @@ class BookmarkManager < Sinatra::Base
     end
 
     get '/bookmarks' do
-        p ENV
         erb :bookmark_list
     end
 

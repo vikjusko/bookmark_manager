@@ -4,15 +4,8 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-ENV['ENVIRONMENT'] = "test"
-
-require "./spec/setup_test_database.rb"
-ENV["ENVIRONMENT"] = "test"
-RSpec.configure do |config|
-  config.before(:each) do
-    setup_test_database
-  end
-end
+ENV["RACK_ENV"] = "bookmark_manager"
+ENV["RSPEC_ENV"] = "bookmark_manager_test"
 
 Capybara.app = BookmarkManager
 

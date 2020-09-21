@@ -1,4 +1,8 @@
 require 'pg'
+
+    
+
+
 class Bookmark
     def self.all 
         if ENV['ENVIRONMENT'] == 'test'

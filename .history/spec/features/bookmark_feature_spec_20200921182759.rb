@@ -10,6 +10,10 @@ end
 
 feature 'Viewing Bookmarks page' do
     scenario 'Bookmarks page should have a bookmark' do
+        #con = PG.connect :dbname => "bookmark_manager_test"
+        #con.exec("INSERT INTO bookmarks (url) VALUES('http://www.askjeeves.com');")
+        #con.exec("INSERT INTO bookmarks (url) VALUES('http://www.makersacademy.com');")
+        #con.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
         visit('/bookmarks')
         expect(page).to have_content "http://www.askjeeves.com"
         expect(page).to have_content "http://www.makersacademy.com"

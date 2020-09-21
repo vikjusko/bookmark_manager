@@ -1,5 +1,4 @@
-require 'pg' 
-
+require 'pg'
 feature 'Viewing Bookmark homepage' do
     scenario 'Index page should show bookmark manager' do
         visit('/')
