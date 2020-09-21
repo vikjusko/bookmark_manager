@@ -4,8 +4,8 @@ describe Bookmark do
     
     describe 'Open bookmark list' do
         it 'Opening bookmark page should list out the bookmarks' do
-            Bookmark.all
-            expect(Bookmark.all).to eq ["http://askjeeves.com", "http://www.makersacademy.com", "http://www.destroyallsoftware.com"]
+            bookmark = Bookmark.new
+            expect(bookmark.all).to eq ["www.google.com", "www.twitter.com", "www.youtube.com"]
         end
     end
 end

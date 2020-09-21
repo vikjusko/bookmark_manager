@@ -9,8 +9,8 @@ end
 feature 'Viewing Bookmarks page' do
     scenario 'Bookmarks page should have a bookmark' do
         visit('/bookmarks')
-        expect(page).to have_content "http://askjeeves.com"
-        expect(page).to have_content "http://www.makersacademy.com"
-        expect(page).to have_content "http://www.destroyallsoftware.com"
+        expect(page).to have_content "www.google.com"
+        expect(page).to have_content "www.twitter.com"
+        expect(page).to have_content "www.youtube.com"
     end
 end
