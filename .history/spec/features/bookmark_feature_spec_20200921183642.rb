@@ -15,13 +15,4 @@ feature 'Viewing Bookmarks page' do
         expect(page).to have_content "http://www.makersacademy.com"
         expect(page).to have_content "http://www.destroyallsoftware.com"
     end
-end 
-
-feature "adding a new bookmark" do 
-    scenario 'A user can add a new bookmark to a Bookmark manager' do
-        visit ('/bookmarks/new')
-        fill_in :url, with: 'http://www.google.com'
-        click_button("Submit")
-        expect(page).to have_content 'http://www.google.com'
-    end 
-end 
+end
