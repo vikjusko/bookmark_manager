@@ -46,11 +46,11 @@ describe Bookmark do
     describe "#update bookmark" do 
         it "updated a chosen bookmark" do
             bookmark = Bookmark.create(title: "Makers Academy", url: "http://www.makersacademy.com")
-            updated_bookmark = Bookmark.edit(id: bookmark.id, url: 'http://www.google.com', title: 'Google')
+            updated_bookmark = Bookmark.edit(id: bookmark.id, title: 'Google', url: 'http://www.google.com')
             expect(updated_bookmark).to be_a Bookmark
             expect(updated_bookmark.id).to eq bookmark.id
             expect(updated_bookmark.url).to eq "http://www.google.com"
-            expect(updated_bookmark.title).to eq 'Google'
+            expect(updated_bookmark.title).to eq ('Google')
         end
     end 
 end

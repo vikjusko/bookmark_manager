@@ -50,7 +50,7 @@ feature "updating a bookmark" do
         click_button("Edit")
         fill_in :title, with: "Netflix"
         fill_in :url, with: 'http://www.netflix.com'
-        click_button('Edit')
+        click_button("Submit")
         expect(page).to have_link('Netflix', href: 'http://www.netflix.com')
     end
 

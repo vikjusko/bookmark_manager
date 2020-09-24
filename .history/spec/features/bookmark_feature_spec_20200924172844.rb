@@ -42,6 +42,15 @@ feature "deleting a bookmark" do
 end
 
 feature "updating a bookmark" do
+    scenario 'A user can update a bookmark' do
+        visit ('/bookmarks/new')
+        fill_in :url, with: 'http://www.google.com'
+        fill_in :title, with: "Google"
+        click_button("Submit")
+        click_button("Edit")
+        
+    end
+
     scenario 'An updated boookmark is saved to the bookmarks page' do
         visit ('/bookmarks/new')
         fill_in :url, with: 'http://www.google.com'
@@ -50,7 +59,6 @@ feature "updating a bookmark" do
         click_button("Edit")
         fill_in :title, with: "Netflix"
         fill_in :url, with: 'http://www.netflix.com'
-        click_button('Edit')
         expect(page).to have_link('Netflix', href: 'http://www.netflix.com')
     end
 

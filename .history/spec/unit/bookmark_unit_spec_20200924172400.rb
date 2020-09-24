@@ -50,7 +50,7 @@ describe Bookmark do
             expect(updated_bookmark).to be_a Bookmark
             expect(updated_bookmark.id).to eq bookmark.id
             expect(updated_bookmark.url).to eq "http://www.google.com"
-            expect(updated_bookmark.title).to eq 'Google'
+            expect(updated_bookmark.title).to eq ('Google')
         end
     end 
 end

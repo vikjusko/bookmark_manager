@@ -34,7 +34,7 @@ class Bookmark
     end
 
     def self.edit(id:, url:, title:)
-        result = set_up.exec("UPDATE bookmarks SET url='#{url}', title='#{title}' RETURNING id, url, title;")
-        result = Bookmark.new(id: result[0]["id"], url: result[0]["url"], title: result[0]["title"])
+        set_up.exec("UPDATE bookmarks SET url='#{url}', title='#{title}' WHERE id=#{id};")
+        Bookmark.new(id: result[0]["id"], url: result[0]["url"], title: result[0]["title"])
     end
 end
