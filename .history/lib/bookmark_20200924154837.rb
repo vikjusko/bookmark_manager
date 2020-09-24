@@ -37,6 +37,6 @@ class Bookmark
     else
       con = PG.connect(dbname: 'bookmark_manager')
     end
-        con.exec("DELETE FROM bookmarks WHERE title = '#{title}'")
+        con.exec("DELETE FROM bookmarks WHERE title = '#{title}';")
     end
 end

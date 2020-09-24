@@ -38,7 +38,7 @@ describe Bookmark do
     describe "#delete" do
         it "deletes selected bookmark" do
             bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com') 
-            Bookmark.delete(title: bookmark.title)
+            Bookmark.delete(title: "#{bookmark.title}")
             expect(Bookmark.all.length).to eq 0
         end 
     end 

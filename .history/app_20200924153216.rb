@@ -18,9 +18,9 @@ class BookmarkManager < Sinatra::Base
         erb :bookmarks_new
     end
 
-    delete '/bookmarks/:title' do
-        Bookmark.delete(title: params[:title])
-        redirect '/bookmarks'
+    delete "/bookmarks/:id" do
+    connection = PG.connect(dbname: "bookmark_manager_test")
+    connection.exec("DELETE FROM bookmarks WHERE id = #{params["id"]}")redirect "/bookmarks"
     end
 
     post '/bookmarks' do
