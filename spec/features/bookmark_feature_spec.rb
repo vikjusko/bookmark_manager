@@ -29,3 +29,14 @@ feature "adding a new bookmark" do
         expect(page).to have_link('Google', href: 'http://www.google.com')
     end 
 end 
+
+feature "deleting a bookmark" do
+    scenario 'A user can delete a bookmark' do
+        visit ('/bookmarks/new')
+        fill_in :url, with: 'http://www.google.com'
+        fill_in :title, with: "Google"
+        click_button("Submit")
+        click_button("Delete")
+        expect(page).not_to_have_link('Google', href: 'http://www.google.com')
+    end
+end
