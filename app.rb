@@ -18,15 +18,26 @@ class BookmarkManager < Sinatra::Base
         erb :bookmarks_new
     end
 
-    delete '/bookmarks/:title' do
-        Bookmark.delete(title: params[:title])
+    delete '/bookmarks/:id' do
+        Bookmark.delete(id: params[:id])
         redirect '/bookmarks'
     end
 
     post '/bookmarks' do
       Bookmark.create(url: params[:url], title: params[:title])
       redirect '/bookmarks'
+    end
+
+    patch '/bookmarks/:id' do
+        new_title = params[:title]
+        new_url = params
+        redirect '/bookmarks'
     end 
+
+    get '/bookmarks/edit' do
+        erb :update_bookmark
+        # update
+    end
         
 
     run if app_file ==$0
