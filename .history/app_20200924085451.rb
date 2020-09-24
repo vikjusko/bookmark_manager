@@ -8,7 +8,6 @@ class BookmarkManager < Sinatra::Base
     end
 
     get '/bookmarks' do
-        @bookmarks_list = Bookmark.all
         erb :bookmark_list
     end
 

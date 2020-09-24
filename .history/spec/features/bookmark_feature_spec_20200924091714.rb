@@ -1,14 +1,14 @@
 require 'pg' 
 
-    feature 'Viewing Bookmark homepage' do
+feature 'Viewing Bookmark homepage' do
     scenario 'Index page should show bookmark manager' do
         visit('/')
         expect(page).to have_content "Bookmark Manager"
-     end
     end
+end
 
 
-    feature 'Viewing Bookmarks page' do
+feature 'Viewing Bookmarks page' do
         scenario 'Bookmarks page should have a bookmark' do
         Bookmark.create(url: "http://www.makersacademy.com", title: 'Makers Academy')
         Bookmark.create(url: "http://www.askjeeves.com", title: 'Ask Jeeves')
